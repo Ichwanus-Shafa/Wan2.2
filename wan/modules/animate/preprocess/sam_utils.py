@@ -19,6 +19,8 @@ from omegaconf import OmegaConf
 from sam2.utils.misc import AsyncVideoFrameLoader, _load_img_as_tensor
 from sam2.build_sam import _load_checkpoint
 
+import cv2
+
 
 def _load_img_v2_as_tensor(img, image_size):
     img_pil = Image.fromarray(img.astype(np.uint8))
@@ -30,6 +32,44 @@ def _load_img_v2_as_tensor(img, image_size):
     img = torch.from_numpy(img_np).permute(2, 0, 1)
     video_width, video_height = img_pil.size  # the original video size
     return img, video_height, video_width
+
+
+def _load_video_file_as_tensor(
+    video_path,
+    image_size,
+    offload_video_to_cpu,
+    img_mean=(0.485, 0.456, 0.406),
+    img_std=(0.229, 0.224, 0.225),
+):
+    """Decode a video file into the same normalized tensor as JPEG folders."""
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        cap.release()
+        raise RuntimeError(f"could not open video file {video_path}")
+    frames = []
+    while True:
+        ok, frame_bgr = cap.read()
+        if not ok:
+            break
+        frames.append(cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB))
+    cap.release()
+    if not frames:
+        raise RuntimeError(f"no frames decoded from {video_path}")
+
+    img_mean = torch.tensor(img_mean, dtype=torch.float32)[:, None, None]
+    img_std = torch.tensor(img_std, dtype=torch.float32)[:, None, None]
+    num_frames = len(frames)
+    images = torch.zeros(num_frames, 3, image_size, image_size, dtype=torch.float32)
+    for n, frame in enumerate(tqdm(frames, desc="frame loading (video file)")):
+        images[n], video_height, video_width = _load_img_v2_as_tensor(frame, image_size)
+    if not offload_video_to_cpu:
+        images = images.cuda()
+        img_mean = img_mean.cuda()
+        img_std = img_std.cuda()
+    # normalize by mean and std
+    images -= img_mean
+    images /= img_std
+    return images, video_height, video_width
 
 def load_video_frames(
     video_path,
@@ -50,8 +90,18 @@ def load_video_frames(
     """
     if isinstance(video_path, str) and os.path.isdir(video_path):
         jpg_folder = video_path
+        video_file = None
+    elif isinstance(video_path, str) and os.path.isfile(video_path):
+        jpg_folder = None
+        video_file = video_path
     else:
-        raise NotImplementedError("Only JPEG frames are supported at this moment")
+        raise ValueError(
+            "video_path must be a directory of JPEG frames or a video file"
+        )
+    if video_file is not None:
+        return _load_video_file_as_tensor(
+            video_file, image_size, offload_video_to_cpu, img_mean, img_std
+        )
     if frame_names is None:
         frame_names = [
             p

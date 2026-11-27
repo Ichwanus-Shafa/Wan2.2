@@ -501,7 +501,14 @@ class WanAnimate:
                         device=self.device,
                         sigmas=sampling_sigmas)
                 else:
-                    raise NotImplementedError("Unsupported solver.")
+                    # Unknown solver names fall back to the default UniPC solver
+                    sample_scheduler = FlowUniPCMultistepScheduler(
+                        num_train_timesteps=self.num_train_timesteps,
+                        shift=1,
+                        use_dynamic_shifting=False)
+                    sample_scheduler.set_timesteps(
+                        sampling_steps, device=self.device, shift=shift)
+                    timesteps = sample_scheduler.timesteps
 
                 latents = noise
 

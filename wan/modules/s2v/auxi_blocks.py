@@ -65,6 +65,12 @@ def attention(
     Returns:
         torch.Tensor: Output tensor after self attention with shape [b, s, ad]
     """
+    if mode in ("self_flash", "cross_flash"):
+        mode = "flash"
+    if mode not in MEMORY_LAYOUT or (mode == "flash" and flash_attn_func is None):
+        # flash_attn needs a CUDA GPU; unknown modes fall back to SDPA torch
+        mode = "torch"
+
     pre_attn_layout, post_attn_layout = MEMORY_LAYOUT[mode]
 
     if mode == "torch":
@@ -110,7 +116,11 @@ def attention(
         attn = torch.dropout(attn, p=drop_rate, train=True)
         x = attn @ v
     else:
-        raise NotImplementedError(f"Unsupported attention mode: {mode}")
+        # Unknown modes fall back to the SDPA torch path
+        if attn_mask is not None and attn_mask.dtype != torch.bool:
+            attn_mask = attn_mask.to(q.dtype)
+        x = F.scaled_dot_product_attention(
+            q, k, v, attn_mask=attn_mask, dropout_p=drop_rate, is_causal=causal)
 
     x = post_attn_layout(x)
     b, s, a, d = x.shape
