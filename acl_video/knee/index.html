@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Edukasi Nyeri Lutut — Praktek Fisioterapi Kajhu</title>
+<style>
+  :root{
+    --bg:#FAF7F2; --surface:#FFFFFF; --text:#2E3230; --muted:#5F6662;
+    --accent:#2F6F5E; --heading:#22302B; --border:#E7E2D9; --radius:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;
+       line-height:1.5;display:flex;justify-content:center;padding:24px 16px}
+  main{width:100%;max-width:520px}
+  .eyebrow{display:inline-block;background:var(--accent);color:#FAF7F2;font-size:12px;
+           letter-spacing:.12em;padding:6px 14px;border-radius:999px;font-family:Arial,sans-serif;
+           font-weight:bold;margin-bottom:14px}
+  h1{color:var(--heading);font-size:clamp(26px,6vw,34px);line-height:1.2;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .player{position:relative;border-radius:var(--radius);overflow:hidden;background:#000;
+          box-shadow:0 8px 28px rgba(34,48,43,.14);aspect-ratio:9/16}
+  video{width:100%;height:100%;object-fit:contain;display:block}
+  .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .btn{flex:1 1 200px;display:flex;align-items:center;justify-content:center;gap:8px;
+       min-height:44px;border-radius:var(--radius);text-decoration:none;font-family:Arial,sans-serif;
+       font-weight:bold;font-size:15px;transition:transform .15s ease-out, box-shadow .15s ease-out}
+  .btn-wa{background:var(--accent);color:#fff}
+  .btn-ig{background:var(--surface);color:var(--accent);border:1px solid var(--border)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(34,48,43,.16)}
+  .btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .btn:active{transform:translateY(0)}
+  footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center;font-family:Arial,sans-serif}
+  @media (prefers-reduced-motion: reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">EDUKASI KESEHATAN SENDI</span>
+  <h1>Memahami Nyeri Lutut dengan Tenang</h1>
+  <p class="sub">Video edukasi 60 detik: penyebab, asesmen, terapi, dan latihan aman — bersama Praktek Fisioterapi Kajhu.</p>
+  <div class="player">
+    <video controls playsinline poster="slides/01_hook_bg.png" src="video_nyeri_lutut.mp4"></video>
+  </div>
+  <div class="actions">
+    <a class="btn btn-wa" href="https://wa.me/6285370841555" target="_blank" rel="noopener">Chat WhatsApp Ftr. Sayed</a>
+    <a class="btn btn-ig" href="https://instagram.com/ftr.sayed" target="_blank" rel="noopener">Instagram @ftr.sayed</a>
+  </div>
+  <footer>PRAKTEK FISIOTERAPI KAJHU — TikTok @ftr.sayed — WA 0853-7084-1555</footer>
+</main>
+</body>
+</html>

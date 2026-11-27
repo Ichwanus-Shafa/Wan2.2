@@ -1,0 +1,6 @@
+- heel-intro.jpg: Photo by andreas160578 on Pixabay (https://pixabay.com/photos/hands-massage-treatment-fingers-1327811/)
+- running-shoes.jpg: Photo by StockSnap on Pixabay (https://pixabay.com/photos/running-shoes-footwear-lace-bench-2558673/)
+- heel-pain.jpg: Photo by FeeLoona on Pixabay (https://pixabay.com/photos/feet-childrens-feet-baby-barefoot-619399/)
+- foot-stretch.jpg: Photo by andreas160578 on Pixabay (https://pixabay.com/photos/physical-therapy-foot-massage-2133286/)
+- physio-foot.jpg: Photo by andreas160578 on Pixabay (https://pixabay.com/photos/physical-therapy-foot-massage-2133286/)
+- heel-pain.jpg: Photo by BlijeVoetenPedicure on Pixabay (https://pixabay.com/photos/feet-recovery-treatment-pain-1897731/)

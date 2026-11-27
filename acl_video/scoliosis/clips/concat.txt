@@ -1,0 +1,6 @@
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/01_intro.mp4'
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/02_penyebab.mp4'
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/03_gejala.mp4'
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/04_latihan.mp4'
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/05_terapi.mp4'
+file '/vercel/sandbox/repo/acl_video/scoliosis/clips/06_cta.mp4'

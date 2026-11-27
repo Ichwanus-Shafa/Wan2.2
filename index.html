@@ -1,0 +1,787 @@
+<h1 id="wan2.2">Wan2.2</h1>
+<p align="center">
+<img src="assets/logo.png" width="400"/>
+<p>
+<p align="center">
+<p>💜 <a href="https://wan.video"><b>Wan</b></a> &amp;nbsp&amp;nbsp ｜
+&amp;nbsp&amp;nbsp 🖥️
+<a href="https://github.com/Wan-Video/Wan2.2">GitHub</a>
+&amp;nbsp&amp;nbsp | &amp;nbsp&amp;nbsp🤗
+<a href="https://huggingface.co/Wan-AI/">Hugging
+Face</a>&amp;nbsp&amp;nbsp | &amp;nbsp&amp;nbsp🤖
+<a href="https://modelscope.cn/organization/Wan-AI">ModelScope</a>&amp;nbsp&amp;nbsp
+| &amp;nbsp&amp;nbsp 📑
+<a href="https://arxiv.org/abs/2503.20314">Paper</a> &amp;nbsp&amp;nbsp
+| &amp;nbsp&amp;nbsp 📑
+<a href="https://wan.video/welcome?spm=a2ty_o02.30011076.0.0.6c9ee41eCcluqg">Blog</a>
+&amp;nbsp&amp;nbsp | &amp;nbsp&amp;nbsp 💬
+<a href="https://discord.gg/AKNgpMK4Yj">Discord</a>&amp;nbsp&amp;nbsp
+<br> 📕
+<a href="https://alidocs.dingtalk.com/i/nodes/jb9Y4gmKWrx9eo4dCql9LlbYJGXn6lpz">使用指南(中文)</a>&amp;nbsp&amp;nbsp
+| &amp;nbsp&amp;nbsp 📘
+<a href="https://alidocs.dingtalk.com/i/nodes/EpGBa2Lm8aZxe5myC99MelA2WgN7R35y">User
+Guide(English)</a>&amp;nbsp&amp;nbsp | &amp;nbsp&amp;nbsp💬
+<a href="https://gw.alicdn.com/imgextra/i2/O1CN01tqjWFi1ByuyehkTSB_!!6000000000015-0-tps-611-1279.jpg">WeChat(微信)</a>&amp;nbsp&amp;nbsp
+<br></p>
+<hr />
+<p><a href="https://arxiv.org/abs/2503.20314"><strong>Wan: Open and
+Advanced Large-Scale Video Generative Models</strong></a> <be></p>
+<p>We are excited to introduce <strong>Wan2.2</strong>, a major upgrade
+to our foundational video models. With <strong>Wan2.2</strong>, we have
+focused on incorporating the following innovations:</p>
+<ul>
+<li><p>👍 <strong>Effective MoE Architecture</strong>: Wan2.2 introduces
+a Mixture-of-Experts (MoE) architecture into video diffusion models. By
+separating the denoising process cross timesteps with specialized
+powerful expert models, this enlarges the overall model capacity while
+maintaining the same computational cost.</p></li>
+<li><p>👍 <strong>Cinematic-level Aesthetics</strong>: Wan2.2
+incorporates meticulously curated aesthetic data, complete with detailed
+labels for lighting, composition, contrast, color tone, and more. This
+allows for more precise and controllable cinematic style generation,
+facilitating the creation of videos with customizable aesthetic
+preferences.</p></li>
+<li><p>👍 <strong>Complex Motion Generation</strong>: Compared to
+Wan2.1, Wan2.2 is trained on a significantly larger data, with +65.6%
+more images and +83.2% more videos. This expansion notably enhances the
+model’s generalization across multiple dimensions such as motions,
+semantics, and aesthetics, achieving TOP performance among all
+open-sourced and closed-sourced models.</p></li>
+<li><p>👍 <strong>Efficient High-Definition Hybrid TI2V</strong>: Wan2.2
+open-sources a 5B model built with our advanced Wan2.2-VAE that achieves
+a compression ratio of <strong>16×16×4</strong>. This model supports
+both text-to-video and image-to-video generation at 720P resolution with
+24fps and can also run on consumer-grade graphics cards like 4090. It is
+one of the fastest <strong>720P@24fps</strong> models currently
+available, capable of serving both the industrial and academic sectors
+simultaneously.</p></li>
+</ul>
+<h2 id="video-demos">Video Demos</h2>
+<div data-align="center">
+<p><video src="https://github.com/user-attachments/assets/b63bfa58-d5d7-4de6-a1a2-98970b06d9a7" width="70%" poster="" preload="none" controls>
+</video></p>
+</div>
+<h2 id="latest-news">🔥 Latest News!!</h2>
+<ul>
+<li><p>Nov 13, 2025: 👋 Wan2.2-Animate-14B has been integrated into
+Diffusers (<a
+href="https://github.com/huggingface/diffusers/pull/12526">PR</a>,<a
+href="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B-Diffusers">Weights</a>).
+Thanks to all community contributors. Enjoy!</p></li>
+<li><p>Sep 19, 2025: 💃 We introduct <strong><a
+href="https://humanaigc.github.io/wan-animate">Wan2.2-Animate-14B</a></strong>,
+an unified model for character animation and replacement with holistic
+movement and expression replication. We released the <a
+href="#model-download">model weights</a> and <a
+href="#run-wan-animate">inference code</a>. And you can try it on <a
+href="https://wan.video/">wan.video</a>, <a
+href="https://www.modelscope.cn/studios/Wan-AI/Wan2.2-Animate">ModelScope
+Studio</a> or <a
+href="https://huggingface.co/spaces/Wan-AI/Wan2.2-Animate">HuggingFace
+Space</a>!</p></li>
+<li><p>Aug 26, 2025: 🎵 We introduce <strong><a
+href="https://humanaigc.github.io/wan-s2v-webpage">Wan2.2-S2V-14B</a></strong>,
+an audio-driven cinematic video generation model, including <a
+href="#run-speech-to-video-generation">inference code</a>, <a
+href="#model-download">model weights</a>, and <a
+href="https://humanaigc.github.io/wan-s2v-webpage/content/wan-s2v.pdf">technical
+report</a>! Now you can try it on <a
+href="https://wan.video/">wan.video</a>, <a
+href="https://www.modelscope.cn/studios/Wan-AI/Wan2.2-S2V">ModelScope
+Gradio</a> or <a
+href="https://huggingface.co/spaces/Wan-AI/Wan2.2-S2V">HuggingFace
+Gradio</a>!</p></li>
+<li><p>Jul 28, 2025: 👋 We have open a <a
+href="https://huggingface.co/spaces/Wan-AI/Wan-2.2-5B">HF space</a>
+using the TI2V-5B model. Enjoy!</p></li>
+<li><p>Jul 28, 2025: 👋 Wan2.2 has been integrated into ComfyUI (<a
+href="https://docs.comfy.org/zh-CN/tutorials/video/wan/wan2_2">CN</a> |
+<a href="https://docs.comfy.org/tutorials/video/wan/wan2_2">EN</a>).
+Enjoy!</p></li>
+<li><p>Jul 28, 2025: 👋 Wan2.2’s T2V, I2V and TI2V have been integrated
+into Diffusers (<a
+href="https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B-Diffusers">T2V-A14B</a>
+| <a
+href="https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers">I2V-A14B</a>
+| <a
+href="https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B-Diffusers">TI2V-5B</a>).
+Feel free to give it a try!</p></li>
+<li><p>Jul 28, 2025: 👋 We’ve released the inference code and model
+weights of <strong>Wan2.2</strong>.</p></li>
+<li><p>Sep 5, 2025: 👋 We add text-to-speech synthesis support with <a
+href="https://github.com/FunAudioLLM/CosyVoice">CosyVoice</a> for
+Speech-to-Video generation task.</p></li>
+</ul>
+<h2 id="community-works">Community Works</h2>
+<p>If your research or project builds upon <a
+href="https://github.com/Wan-Video/Wan2.1"><strong>Wan2.1</strong></a>
+or <a
+href="https://github.com/Wan-Video/Wan2.2"><strong>Wan2.2</strong></a>,
+and you would like more people to see it, please inform us.</p>
+<ul>
+<li><a href="https://github.com/GordonChen19/Prompt-Relay">Prompt
+Relay</a>, a plug-and-play, inference-time method for temporal control
+in video generation. Prompt Relay improves video quality and gives users
+precise control over what happens at each moment in the video. Visit
+their <a href="https://gordonchen19.github.io/Prompt-Relay/">webpage</a>
+for more details.</li>
+<li><a href="https://github.com/PKU-YuanGroup/Helios">Helios</a>, a
+breakthrough video generation model base on <strong>Wan2.1</strong> that
+achieves minute-scale, high-quality video synthesis at 19.5 FPS on a
+single H100 GPU (about 10 FPS on a single Ascend NPU) —without relying
+on conventional long video anti-drifting strategies or standard video
+acceleration techniques. Visit their <a
+href="https://pku-yuangroup.github.io/Helios-Page/">webpage</a> for more
+details.</li>
+<li><a href="https://github.com/ModelTC/LightX2V">LightX2V</a>, a
+lightweight and efficient video generation framework that integrates
+<strong>Wan2.1</strong> and <strong>Wan2.2</strong>, supporting multiple
+engineering acceleration techniques for fast inference. <a
+href="https://huggingface.co/lightx2v">LightX2V-HuggingFace</a>, offers
+a variety of Wan-based step-distillation models, quantized models, and
+lightweight VAE models.</li>
+<li><a href="https://github.com/Phantom-video/HuMo">HuMo</a> proposed a
+unified, human-centric framework based on <strong>Wan</strong> to
+produce high-quality, fine-grained, and controllable human videos from
+multimodal inputs—including text, images, and audio. Visit their <a
+href="https://phantom-video.github.io/HuMo/">webpage</a> for more
+details.</li>
+<li><a href="https://github.com/hao-ai-lab/FastVideo">FastVideo</a>
+includes distilled <strong>Wan</strong> models with sparse attention
+that significanly speed up the inference time.</li>
+<li><a href="https://github.com/vipshop/cache-dit">Cache-dit</a> offers
+Fully Cache Acceleration support for <strong>Wan2.2</strong> MoE with
+DBCache, TaylorSeer and Cache CFG. Visit their <a
+href="https://github.com/vipshop/cache-dit/blob/main/examples/pipeline/run_wan_2.2.py">example</a>
+for more details.</li>
+<li><a href="https://github.com/kijai/ComfyUI-WanVideoWrapper">Kijai’s
+ComfyUI WanVideoWrapper</a> is an alternative implementation of
+<strong>Wan</strong> models for ComfyUI. Thanks to its Wan-only focus,
+it’s on the frontline of getting cutting edge optimizations and hot
+research features, which are often hard to integrate into ComfyUI
+quickly due to its more rigid structure.</li>
+<li><a
+href="https://github.com/modelscope/DiffSynth-Studio">DiffSynth-Studio</a>
+provides comprehensive support for <strong>Wan 2.2</strong>, including
+low-GPU-memory layer-by-layer offload, FP8 quantization, sequence
+parallelism, LoRA training, full training.</li>
+<li><a href="https://zhenzhiwang.github.io/talkverse/">TalkVerse</a>,
+built on <strong>Wan2.2-TI2V-5B</strong>, enables minute-long
+audio-driven human video generation. It provides a <strong><a
+href="https://huggingface.co/datasets/zhenzhiwang/TalkVerse">large-scale
+dataset</a></strong>, together with <a
+href="https://github.com/snap-research/TalkVerse">training and inference
+code and model weights</a>, to support reproducible research and
+development, especially for researchers with limited computational
+budgets.</li>
+</ul>
+<h2 id="todo-list">📑 Todo List</h2>
+<ul>
+<li>Wan2.2 Text-to-Video
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Multi-GPU Inference code
+of the A14B and 14B models</label></li>
+<li><label><input type="checkbox" checked="" />Checkpoints of the A14B
+and 14B models</label></li>
+<li><label><input type="checkbox" checked="" />ComfyUI
+integration</label></li>
+<li><label><input type="checkbox" checked="" />Diffusers
+integration</label></li>
+</ul></li>
+<li>Wan2.2 Image-to-Video
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Multi-GPU Inference code
+of the A14B model</label></li>
+<li><label><input type="checkbox" checked="" />Checkpoints of the A14B
+model</label></li>
+<li><label><input type="checkbox" checked="" />ComfyUI
+integration</label></li>
+<li><label><input type="checkbox" checked="" />Diffusers
+integration</label></li>
+</ul></li>
+<li>Wan2.2 Text-Image-to-Video
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Multi-GPU Inference code
+of the 5B model</label></li>
+<li><label><input type="checkbox" checked="" />Checkpoints of the 5B
+model</label></li>
+<li><label><input type="checkbox" checked="" />ComfyUI
+integration</label></li>
+<li><label><input type="checkbox" checked="" />Diffusers
+integration</label></li>
+</ul></li>
+<li>Wan2.2-S2V Speech-to-Video
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Inference code of
+Wan2.2-S2V</label></li>
+<li><label><input type="checkbox" checked="" />Checkpoints of
+Wan2.2-S2V-14B</label></li>
+<li><label><input type="checkbox" checked="" />ComfyUI
+integration</label></li>
+<li><label><input type="checkbox" checked="" />Diffusers
+integration</label></li>
+</ul></li>
+<li>Wan2.2-Animate Character Animation and Replacement
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Inference code of
+Wan2.2-Animate</label></li>
+<li><label><input type="checkbox" checked="" />Checkpoints of
+Wan2.2-Animate</label></li>
+<li><label><input type="checkbox" checked="" />ComfyUI
+integration</label></li>
+<li><label><input type="checkbox" checked="" />Diffusers
+integration</label></li>
+</ul></li>
+</ul>
+<h2 id="run-wan2.2">Run Wan2.2</h2>
+<h4 id="installation">Installation</h4>
+<p>Clone the repo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Wan-Video/Wan2.2.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Wan2.2</span></code></pre></div>
+<p>Install dependencies:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure torch &gt;= 2.4.0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If the installation of `flash_attn` fails, try installing the other packages first and install `flash_attn` last</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If you want to use CosyVoice to synthesize speech for Speech-to-Video Generation, please install requirements_s2v.txt additionally</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements_s2v.txt</span></code></pre></div>
+<h4 id="model-download">Model Download</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 81%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr>
+<th>Models</th>
+<th>Download Links</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T2V-A14B</td>
+<td>🤗 <a
+href="https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B">Huggingface</a> 🤖
+<a
+href="https://modelscope.cn/models/Wan-AI/Wan2.2-T2V-A14B">ModelScope</a></td>
+<td>Text-to-Video MoE model, supports 480P &amp; 720P</td>
+</tr>
+<tr>
+<td>I2V-A14B</td>
+<td>🤗 <a
+href="https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B">Huggingface</a> 🤖
+<a
+href="https://modelscope.cn/models/Wan-AI/Wan2.2-I2V-A14B">ModelScope</a></td>
+<td>Image-to-Video MoE model, supports 480P &amp; 720P</td>
+</tr>
+<tr>
+<td>TI2V-5B</td>
+<td>🤗 <a
+href="https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B">Huggingface</a> 🤖
+<a
+href="https://modelscope.cn/models/Wan-AI/Wan2.2-TI2V-5B">ModelScope</a></td>
+<td>High-compression VAE, T2V+I2V, supports 720P</td>
+</tr>
+<tr>
+<td>S2V-14B</td>
+<td>🤗 <a
+href="https://huggingface.co/Wan-AI/Wan2.2-S2V-14B">Huggingface</a> 🤖
+<a
+href="https://modelscope.cn/models/Wan-AI/Wan2.2-S2V-14B">ModelScope</a></td>
+<td>Speech-to-Video model, supports 480P &amp; 720P</td>
+</tr>
+<tr>
+<td>Animate-14B</td>
+<td>🤗 <a
+href="https://huggingface.co/Wan-AI/Wan2.2-Animate-14B">Huggingface</a>
+🤖 <a
+href="https://www.modelscope.cn/models/Wan-AI/Wan2.2-Animate-14B">ModelScope</a></td>
+<td>Character animation and replacement</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡Note: The TI2V-5B model supports 720P video generation at
+<strong>24 FPS</strong>.</p>
+</blockquote>
+<p>Download models using huggingface-cli:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;huggingface_hub[cli]&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">huggingface-cli</span> download Wan-AI/Wan2.2-T2V-A14B <span class="at">--local-dir</span> ./Wan2.2-T2V-A14B</span></code></pre></div>
+<p>Download models using modelscope-cli:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install modelscope</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">modelscope</span> download Wan-AI/Wan2.2-T2V-A14B <span class="at">--local_dir</span> ./Wan2.2-T2V-A14B</span></code></pre></div>
+<h4 id="run-text-to-video-generation">Run Text-to-Video Generation</h4>
+<p>This repository supports the <code>Wan2.2-T2V-A14B</code>
+Text-to-Video model and can simultaneously support video generation at
+480P and 720P resolutions.</p>
+<h5 id="without-prompt-extension">(1) Without Prompt Extension</h5>
+<p>To facilitate implementation, we will start with a basic version of
+the inference process that skips the <a
+href="#2-using-prompt-extention">prompt extension</a> step.</p>
+<ul>
+<li>Single-GPU inference</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py  <span class="at">--task</span> t2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-T2V-A14B <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--prompt</span> <span class="st">&quot;Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage.&quot;</span></span></code></pre></div>
+<blockquote>
+<p>💡 This command can run on a GPU with at least 80GB VRAM.</p>
+</blockquote>
+<blockquote>
+<p>💡If you encounter OOM (Out-of-Memory) issues, you can use the
+<code>--offload_model True</code>, <code>--convert_model_dtype</code>
+and <code>--t5_cpu</code> options to reduce GPU memory usage.</p>
+</blockquote>
+<ul>
+<li><p>Multi-GPU inference using FSDP + DeepSpeed Ulysses</p>
+<p>We use <a
+href="https://docs.pytorch.org/docs/stable/fsdp.html">PyTorch FSDP</a>
+and <a href="https://arxiv.org/abs/2309.14509">DeepSpeed Ulysses</a> to
+accelerate inference.</p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> t2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-T2V-A14B <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage.&quot;</span></span></code></pre></div>
+<h5 id="using-prompt-extension">(2) Using Prompt Extension</h5>
+<p>Extending the prompts can effectively enrich the details in the
+generated videos, further enhancing the video quality. Therefore, we
+recommend enabling prompt extension. We provide the following two
+methods for prompt extension:</p>
+<ul>
+<li><p>Use the Dashscope API for extension.</p>
+<ul>
+<li>Apply for a <code>dashscope.api_key</code> in advance (<a
+href="https://www.alibabacloud.com/help/en/model-studio/getting-started/first-api-call-to-qwen">EN</a>
+| <a
+href="https://help.aliyun.com/zh/model-studio/getting-started/first-api-call-to-qwen">CN</a>).</li>
+<li>Configure the environment variable <code>DASH_API_KEY</code> to
+specify the Dashscope API key. For users of Alibaba Cloud’s
+international site, you also need to set the environment variable
+<code>DASH_API_URL</code> to
+‘https://dashscope-intl.aliyuncs.com/api/v1’. For more detailed
+instructions, please refer to the <a
+href="https://www.alibabacloud.com/help/en/model-studio/developer-reference/use-qwen-by-calling-api?spm=a2c63.p38356.0.i1">dashscope
+document</a>.</li>
+<li>Use the <code>qwen-plus</code> model for text-to-video tasks and
+<code>qwen-vl-max</code> for image-to-video tasks.</li>
+<li>You can modify the model used for extension with the parameter
+<code>--prompt_extend_model</code>. For example:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">DASH_API_KEY</span><span class="op">=</span>your_key <span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py  <span class="at">--task</span> t2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-T2V-A14B <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage&quot;</span> <span class="at">--use_prompt_extend</span> <span class="at">--prompt_extend_method</span> <span class="st">&#39;dashscope&#39;</span> <span class="at">--prompt_extend_target_lang</span> <span class="st">&#39;zh&#39;</span></span></code></pre></div></li>
+<li><p>Using a local model for extension.</p>
+<ul>
+<li>By default, the Qwen model on HuggingFace is used for this
+extension. Users can choose Qwen models or other models based on the
+available GPU memory size.</li>
+<li>For text-to-video tasks, you can use models like
+<code>Qwen/Qwen2.5-14B-Instruct</code>,
+<code>Qwen/Qwen2.5-7B-Instruct</code> and
+<code>Qwen/Qwen2.5-3B-Instruct</code>.</li>
+<li>For image-to-video tasks, you can use models like
+<code>Qwen/Qwen2.5-VL-7B-Instruct</code> and
+<code>Qwen/Qwen2.5-VL-3B-Instruct</code>.</li>
+<li>Larger models generally provide better extension results but require
+more GPU memory.</li>
+<li>You can modify the model used for extension with the parameter
+<code>--prompt_extend_model</code> , allowing you to specify either a
+local model path or a Hugging Face model. For example:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py  <span class="at">--task</span> t2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-T2V-A14B <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage&quot;</span> <span class="at">--use_prompt_extend</span> <span class="at">--prompt_extend_method</span> <span class="st">&#39;local_qwen&#39;</span> <span class="at">--prompt_extend_target_lang</span> <span class="st">&#39;zh&#39;</span></span></code></pre></div>
+<h4 id="run-image-to-video-generation">Run Image-to-Video
+Generation</h4>
+<p>This repository supports the <code>Wan2.2-I2V-A14B</code>
+Image-to-Video model and can simultaneously support video generation at
+480P and 720P resolutions.</p>
+<ul>
+<li>Single-GPU inference</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py <span class="at">--task</span> i2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-I2V-A14B <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--image</span> examples/i2v_input.JPG <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard. The fluffy-furred feline gazes directly at the camera with a relaxed expression. Blurred beach scenery forms the background featuring crystal-clear waters, distant green hills, and a blue sky dotted with white clouds. The cat assumes a naturally relaxed posture, as if savoring the sea breeze and warm sunlight. A close-up shot highlights the feline&#39;s intricate details and the refreshing atmosphere of the seaside.&quot;</span></span></code></pre></div>
+<blockquote>
+<p>This command can run on a GPU with at least 80GB VRAM.</p>
+</blockquote>
+<blockquote>
+<p>💡For the Image-to-Video task, the <code>size</code> parameter
+represents the area of the generated video, with the aspect ratio
+following that of the original input image.</p>
+</blockquote>
+<ul>
+<li>Multi-GPU inference using FSDP + DeepSpeed Ulysses</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> i2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-I2V-A14B <span class="at">--image</span> examples/i2v_input.JPG <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard. The fluffy-furred feline gazes directly at the camera with a relaxed expression. Blurred beach scenery forms the background featuring crystal-clear waters, distant green hills, and a blue sky dotted with white clouds. The cat assumes a naturally relaxed posture, as if savoring the sea breeze and warm sunlight. A close-up shot highlights the feline&#39;s intricate details and the refreshing atmosphere of the seaside.&quot;</span></span></code></pre></div>
+<ul>
+<li>Image-to-Video Generation without prompt</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">DASH_API_KEY</span><span class="op">=</span>your_key <span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> i2v-A14B <span class="at">--size</span> 1280<span class="pp">*</span>720 <span class="at">--ckpt_dir</span> ./Wan2.2-I2V-A14B <span class="at">--prompt</span> <span class="st">&#39;&#39;</span> <span class="at">--image</span> examples/i2v_input.JPG <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--use_prompt_extend</span> <span class="at">--prompt_extend_method</span> <span class="st">&#39;dashscope&#39;</span></span></code></pre></div>
+<blockquote>
+<p>💡The model can generate videos solely from the input image. You can
+use prompt extension to generate prompt from the image.</p>
+</blockquote>
+<blockquote>
+<p>The process of prompt extension can be referenced <a
+href="#2-using-prompt-extention">here</a>.</p>
+</blockquote>
+<h4 id="run-text-image-to-video-generation">Run Text-Image-to-Video
+Generation</h4>
+<p>This repository supports the <code>Wan2.2-TI2V-5B</code>
+Text-Image-to-Video model and can support video generation at 720P
+resolutions.</p>
+<ul>
+<li>Single-GPU Text-to-Video inference</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py <span class="at">--task</span> ti2v-5B <span class="at">--size</span> 1280<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-TI2V-5B <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--t5_cpu</span> <span class="at">--prompt</span> <span class="st">&quot;Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage&quot;</span></span></code></pre></div>
+<blockquote>
+<p>💡Unlike other tasks, the 720P resolution of the Text-Image-to-Video
+task is <code>1280*704</code> or <code>704*1280</code>.</p>
+</blockquote>
+<blockquote>
+<p>This command can run on a GPU with at least 24GB VRAM (e.g, RTX 4090
+GPU).</p>
+</blockquote>
+<blockquote>
+<p>💡If you are running on a GPU with at least 80GB VRAM, you can remove
+the <code>--offload_model True</code>,
+<code>--convert_model_dtype</code> and <code>--t5_cpu</code> options to
+speed up execution.</p>
+</blockquote>
+<ul>
+<li>Single-GPU Image-to-Video inference</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py <span class="at">--task</span> ti2v-5B <span class="at">--size</span> 1280<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-TI2V-5B <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--t5_cpu</span> <span class="at">--image</span> examples/i2v_input.JPG <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard. The fluffy-furred feline gazes directly at the camera with a relaxed expression. Blurred beach scenery forms the background featuring crystal-clear waters, distant green hills, and a blue sky dotted with white clouds. The cat assumes a naturally relaxed posture, as if savoring the sea breeze and warm sunlight. A close-up shot highlights the feline&#39;s intricate details and the refreshing atmosphere of the seaside.&quot;</span></span></code></pre></div>
+<blockquote>
+<p>💡If the image parameter is configured, it is an Image-to-Video
+generation; otherwise, it defaults to a Text-to-Video generation.</p>
+</blockquote>
+<blockquote>
+<p>💡Similar to Image-to-Video, the <code>size</code> parameter
+represents the area of the generated video, with the aspect ratio
+following that of the original input image.</p>
+</blockquote>
+<ul>
+<li>Multi-GPU inference using FSDP + DeepSpeed Ulysses</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> ti2v-5B <span class="at">--size</span> 1280<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-TI2V-5B <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--image</span> examples/i2v_input.JPG <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard. The fluffy-furred feline gazes directly at the camera with a relaxed expression. Blurred beach scenery forms the background featuring crystal-clear waters, distant green hills, and a blue sky dotted with white clouds. The cat assumes a naturally relaxed posture, as if savoring the sea breeze and warm sunlight. A close-up shot highlights the feline&#39;s intricate details and the refreshing atmosphere of the seaside.&quot;</span></span></code></pre></div>
+<blockquote>
+<p>The process of prompt extension can be referenced <a
+href="#2-using-prompt-extention">here</a>.</p>
+</blockquote>
+<h4 id="run-speech-to-video-generation">Run Speech-to-Video
+Generation</h4>
+<p>This repository supports the <code>Wan2.2-S2V-14B</code>
+Speech-to-Video model and can simultaneously support video generation at
+480P and 720P resolutions.</p>
+<ul>
+<li>Single-GPU Speech-to-Video inference</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py  <span class="at">--task</span> s2v-14B <span class="at">--size</span> 1024<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-S2V-14B/ <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard.&quot;</span>  <span class="at">--image</span> <span class="st">&quot;examples/i2v_input.JPG&quot;</span> <span class="at">--audio</span> <span class="st">&quot;examples/talk.wav&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Without setting --num_clip, the generated video length will automatically adjust based on the input audio length</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># You can use CosyVoice to generate audio with --enable_tts</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py  <span class="at">--task</span> s2v-14B <span class="at">--size</span> 1024<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-S2V-14B/ <span class="at">--offload_model</span> True <span class="at">--convert_model_dtype</span> <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard.&quot;</span>  <span class="at">--image</span> <span class="st">&quot;examples/i2v_input.JPG&quot;</span> <span class="at">--enable_tts</span> <span class="at">--tts_prompt_audio</span> <span class="st">&quot;examples/zero_shot_prompt.wav&quot;</span> <span class="at">--tts_prompt_text</span> <span class="st">&quot;希望你以后能够做的比我还好呦。&quot;</span> <span class="at">--tts_text</span> <span class="st">&quot;收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。&quot;</span></span></code></pre></div>
+<blockquote>
+<p>💡 This command can run on a GPU with at least 80GB VRAM.</p>
+</blockquote>
+<ul>
+<li>Multi-GPU inference using FSDP + DeepSpeed Ulysses</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> s2v-14B <span class="at">--size</span> 1024<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-S2V-14B/ <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;Summer beach vacation style, a white cat wearing sunglasses sits on a surfboard.&quot;</span> <span class="at">--image</span> <span class="st">&quot;examples/i2v_input.JPG&quot;</span> <span class="at">--audio</span> <span class="st">&quot;examples/talk.wav&quot;</span></span></code></pre></div>
+<ul>
+<li>Pose + Audio driven generation</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torchrun</span> <span class="at">--nproc_per_node</span><span class="op">=</span>8 generate.py <span class="at">--task</span> s2v-14B <span class="at">--size</span> 1024<span class="pp">*</span>704 <span class="at">--ckpt_dir</span> ./Wan2.2-S2V-14B/ <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8 <span class="at">--prompt</span> <span class="st">&quot;a person is singing&quot;</span> <span class="at">--image</span> <span class="st">&quot;examples/pose.png&quot;</span> <span class="at">--audio</span> <span class="st">&quot;examples/sing.MP3&quot;</span> <span class="at">--pose_video</span> <span class="st">&quot;./examples/pose.mp4&quot;</span> </span></code></pre></div>
+<blockquote>
+<p>💡For the Speech-to-Video task, the <code>size</code> parameter
+represents the area of the generated video, with the aspect ratio
+following that of the original input image.</p>
+</blockquote>
+<blockquote>
+<p>💡The model can generate videos from audio input combined with
+reference image and optional text prompt.</p>
+</blockquote>
+<blockquote>
+<p>💡The <code>--pose_video</code> parameter enables pose-driven
+generation, allowing the model to follow specific pose sequences while
+generating videos synchronized with audio input.</p>
+</blockquote>
+<blockquote>
+<p>💡The <code>--num_clip</code> parameter controls the number of video
+clips generated, useful for quick preview with shorter generation
+time.</p>
+</blockquote>
+<p>Please visit our project page to see more examples and learn about
+the scenarios suitable for this model.</p>
+<h4 id="run-wan-animate">Run Wan-Animate</h4>
+<p>Wan-Animate takes a video and a character image as input, and
+generates a video in either “animation” or “replacement” mode.</p>
+<ol type="1">
+<li>animation mode： The model generates a video of the character image
+that mimics the human motion in the input video.</li>
+<li>replacement mode: The model replaces the character image with the
+input video.</li>
+</ol>
+<p>Please visit our <a
+href="https://humanaigc.github.io/wan-animate">project page</a> to see
+more examples and learn about the scenarios suitable for this model.</p>
+<h5 id="preprocessing">(1) Preprocessing</h5>
+<p>The input video should be preprocessed into several materials before
+be feed into the inference process. Please refer to the following
+processing flow, and more details about preprocessing can be found in <a
+href="https://github.com/Wan-Video/Wan2.2/blob/main/wan/modules/animate/preprocess/UserGuider.md">UserGuider</a>.</p>
+<ul>
+<li>For animation</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> ./wan/modules/animate/preprocess/preprocess_data.py <span class="dt">\</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--ckpt_path</span> ./Wan2.2-Animate-14B/process_checkpoint <span class="dt">\</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--video_path</span> ./examples/wan_animate/animate/video.mp4 <span class="dt">\</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--refer_path</span> ./examples/wan_animate/animate/image.jpeg <span class="dt">\</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--save_path</span> ./examples/wan_animate/animate/process_results <span class="dt">\</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--resolution_area</span> 1280 720 <span class="dt">\</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--retarget_flag</span> <span class="dt">\</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--use_flux</span></span></code></pre></div>
+<ul>
+<li>For replacement</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> ./wan/modules/animate/preprocess/preprocess_data.py <span class="dt">\</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--ckpt_path</span> ./Wan2.2-Animate-14B/process_checkpoint <span class="dt">\</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--video_path</span> ./examples/wan_animate/replace/video.mp4 <span class="dt">\</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--refer_path</span> ./examples/wan_animate/replace/image.jpeg <span class="dt">\</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--save_path</span> ./examples/wan_animate/replace/process_results <span class="dt">\</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--resolution_area</span> 1280 720 <span class="dt">\</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--iterations</span> 3 <span class="dt">\</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--k</span> 7 <span class="dt">\</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--w_len</span> 1 <span class="dt">\</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">--h_len</span> 1 <span class="dt">\</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">--replace_flag</span></span></code></pre></div>
+<h5 id="run-in-animation-mode">(2) Run in animation mode</h5>
+<ul>
+<li>Single-GPU inference</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py <span class="at">--task</span> animate-14B <span class="at">--ckpt_dir</span> ./Wan2.2-Animate-14B/ <span class="at">--src_root_path</span> ./examples/wan_animate/animate/process_results/ <span class="at">--refert_num</span> 1</span></code></pre></div>
+<ul>
+<li>Multi-GPU inference using FSDP + DeepSpeed Ulysses</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> torch.distributed.run <span class="at">--nnodes</span> 1 <span class="at">--nproc_per_node</span> 8 generate.py <span class="at">--task</span> animate-14B <span class="at">--ckpt_dir</span> ./Wan2.2-Animate-14B/ <span class="at">--src_root_path</span> ./examples/wan_animate/animate/process_results/ <span class="at">--refert_num</span> 1 <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8</span></code></pre></div>
+<ul>
+<li>Diffusers Pipeline</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diffusers <span class="im">import</span> WanAnimatePipeline</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diffusers.utils <span class="im">import</span> export_to_video, load_image, load_video</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> <span class="st">&quot;cuda:0&quot;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>dtype <span class="op">=</span> torch.bfloat16</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>model_id <span class="op">=</span> <span class="st">&quot;Wan-AI/Wan2.2-Animate-14B-Diffusers&quot;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>pipe <span class="op">=</span> WanAnimatePipeline.from_pretrained(model_id torch_dtype<span class="op">=</span>dtype)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>pipe.to(device)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>seed <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">&quot;People in the video are doing actions.&quot;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Animation</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> load_image(<span class="st">&quot;/path/to/animate/reference/image/src_ref.png&quot;</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>pose_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/animate/pose/video/src_pose.mp4&quot;</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>face_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/animate/face/video/src_face.mp4&quot;</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>animate_video <span class="op">=</span> pipe(</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    image<span class="op">=</span>image,</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    pose_video<span class="op">=</span>pose_video,</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    face_video<span class="op">=</span>face_video,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    prompt<span class="op">=</span>prompt,</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">&quot;animate&quot;</span>,</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    segment_frame_length<span class="op">=</span><span class="dv">77</span>,  <span class="co"># clip_len in original code</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>    prev_segment_conditioning_frames<span class="op">=</span><span class="dv">1</span>,  <span class="co"># refert_num in original code</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>    guidance_scale<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    num_inference_steps<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>    generator<span class="op">=</span>torch.Generator(device<span class="op">=</span>device).manual_seed(seed),</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>).frames[<span class="dv">0</span>]</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>export_to_video(animate_video, <span class="st">&quot;diffusers_animate.mp4&quot;</span>, fps<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div>
+<h5 id="run-in-replacement-mode">(3) Run in replacement mode</h5>
+<ul>
+<li>Single-GPU inference</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> generate.py <span class="at">--task</span> animate-14B <span class="at">--ckpt_dir</span> ./Wan2.2-Animate-14B/ <span class="at">--src_root_path</span> ./examples/wan_animate/replace/process_results/ <span class="at">--refert_num</span> 1 <span class="at">--replace_flag</span> <span class="at">--use_relighting_lora</span> </span></code></pre></div>
+<ul>
+<li>Multi-GPU inference using FSDP + DeepSpeed Ulysses</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> torch.distributed.run <span class="at">--nnodes</span> 1 <span class="at">--nproc_per_node</span> 8 generate.py <span class="at">--task</span> animate-14B <span class="at">--ckpt_dir</span> ./Wan2.2-Animate-14B/ <span class="at">--src_root_path</span> ./examples/wan_animate/replace/process_results/src_pose.mp4  <span class="at">--refert_num</span> 1 <span class="at">--replace_flag</span> <span class="at">--use_relighting_lora</span> <span class="at">--dit_fsdp</span> <span class="at">--t5_fsdp</span> <span class="at">--ulysses_size</span> 8</span></code></pre></div>
+<ul>
+<li>Diffusers Pipeline</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create pipeline as in the Animation code ☝️</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Replacement</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> load_image(<span class="st">&quot;/path/to/replace/reference/image/src_ref.png&quot;</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>pose_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/replace/pose/video/src_pose.mp4&quot;</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>face_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/replace/face/video/src_face.mp4&quot;</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>background_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/replace/background/video/src_bg.mp4&quot;</span>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>mask_video <span class="op">=</span> load_video(<span class="st">&quot;/path/to/replace/mask/video/src_mask.mp4&quot;</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>replace_video <span class="op">=</span> pipe(</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    image<span class="op">=</span>image,</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    pose_video<span class="op">=</span>pose_video,</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    face_video<span class="op">=</span>face_video,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    background_video<span class="op">=</span>background_video,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    mask_video<span class="op">=</span>mask_video,</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    prompt<span class="op">=</span>prompt,</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">&quot;replace&quot;</span>,</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    segment_frame_length<span class="op">=</span><span class="dv">77</span>,  <span class="co"># clip_len in original code</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    prev_segment_conditioning_frames<span class="op">=</span><span class="dv">1</span>,  <span class="co"># refert_num in original code</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    guidance_scale<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    num_inference_steps<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    generator<span class="op">=</span>torch.Generator(device<span class="op">=</span>device).manual_seed(seed),</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>).frames[<span class="dv">0</span>]</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>export_to_video(replace_video, <span class="st">&quot;diffusers_replace.mp4&quot;</span>, fps<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div>
+<blockquote>
+<p>💡 If you’re using <strong>Wan-Animate</strong>, we do not recommend
+using LoRA models trained on <code>Wan2.2</code>, since weight changes
+during training may lead to unexpected behavior.</p>
+</blockquote>
+<h2 id="computational-efficiency-on-different-gpus">Computational
+Efficiency on Different GPUs</h2>
+<p>We test the computational efficiency of different
+<strong>Wan2.2</strong> models on different GPUs in the following table.
+The results are presented in the format: <strong>Total time (s) / peak
+GPU memory (GB)</strong>.</p>
+<div data-align="center">
+<pre><code>&lt;img src=&quot;assets/comp_effic.png&quot; alt=&quot;&quot; style=&quot;width: 80%;&quot; /&gt;</code></pre>
+</div>
+<blockquote>
+<p>The parameter settings for the tests presented in this table are as
+follows: (1) Multi-GPU: 14B:
+<code>--ulysses_size 4/8 --dit_fsdp --t5_fsdp</code>, 5B:
+<code>--ulysses_size 4/8 --offload_model True --convert_model_dtype --t5_cpu</code>;
+Single-GPU: 14B:
+<code>--offload_model True --convert_model_dtype</code>, 5B:
+<code>--offload_model True --convert_model_dtype --t5_cpu</code>
+(–convert_model_dtype converts model parameter types to
+config.param_dtype); (2) The distributed testing utilizes the built-in
+FSDP and Ulysses implementations, with FlashAttention3 deployed on
+Hopper architecture GPUs; (3) Tests were run without the
+<code>--use_prompt_extend</code> flag; (4) Reported results are the
+average of multiple samples taken after the warm-up phase.</p>
+</blockquote>
+<hr />
+<h2 id="introduction-of-wan2.2">Introduction of Wan2.2</h2>
+<p><strong>Wan2.2</strong> builds on the foundation of Wan2.1 with
+notable improvements in generation quality and model capability. This
+upgrade is driven by a series of key technical innovations, mainly
+including the Mixture-of-Experts (MoE) architecture, upgraded training
+data, and high-compression video generation.</p>
+<h5 id="mixture-of-experts-moe-architecture">(1) Mixture-of-Experts
+(MoE) Architecture</h5>
+<p>Wan2.2 introduces Mixture-of-Experts (MoE) architecture into the
+video generation diffusion model. MoE has been widely validated in large
+language models as an efficient approach to increase total model
+parameters while keeping inference cost nearly unchanged. In Wan2.2, the
+A14B model series adopts a two-expert design tailored to the denoising
+process of diffusion models: a high-noise expert for the early stages,
+focusing on overall layout; and a low-noise expert for the later stages,
+refining video details. Each expert model has about 14B parameters,
+resulting in a total of 27B parameters but only 14B active parameters
+per step, keeping inference computation and GPU memory nearly
+unchanged.</p>
+<div data-align="center">
+<pre><code>&lt;img src=&quot;assets/moe_arch.png&quot; alt=&quot;&quot; style=&quot;width: 90%;&quot; /&gt;</code></pre>
+</div>
+<p>The transition point between the two experts is determined by the
+signal-to-noise ratio (SNR), a metric that decreases monotonically as
+the denoising step <span class="math inline"><em>t</em></span>
+increases. At the beginning of the denoising process, <span
+class="math inline"><em>t</em></span> is large and the noise level is
+high, so the SNR is at its minimum, denoted as <span
+class="math inline"><em>S</em><em>N</em><em>R</em><sub><em>m</em><em>i</em><em>n</em></sub></span>.
+In this stage, the high-noise expert is activated. We define a threshold
+step <span
+class="math inline"><em>t</em><sub><em>m</em><em>o</em><em>e</em></sub></span>
+corresponding to half of the <span
+class="math inline"><em>S</em><em>N</em><em>R</em><sub><em>m</em><em>i</em><em>n</em></sub></span>,
+and switch to the low-noise expert when <span
+class="math inline"><em>t</em> &lt; <em>t</em><sub><em>m</em><em>o</em><em>e</em></sub></span>.</p>
+<div data-align="center">
+<pre><code>&lt;img src=&quot;assets/moe_2.png&quot; alt=&quot;&quot; style=&quot;width: 90%;&quot; /&gt;</code></pre>
+</div>
+<p>To validate the effectiveness of the MoE architecture, four settings
+are compared based on their validation loss curves. The baseline
+<strong>Wan2.1</strong> model does not employ the MoE architecture.
+Among the MoE-based variants, the <strong>Wan2.1 &amp; High-Noise
+Expert</strong> reuses the Wan2.1 model as the low-noise expert while
+uses the Wan2.2’s high-noise expert, while the <strong>Wan2.1 &amp;
+Low-Noise Expert</strong> uses Wan2.1 as the high-noise expert and
+employ the Wan2.2’s low-noise expert. The <strong>Wan2.2 (MoE)</strong>
+(our final version) achieves the lowest validation loss, indicating that
+its generated video distribution is closest to ground-truth and exhibits
+superior convergence.</p>
+<h5 id="efficient-high-definition-hybrid-ti2v">(2) Efficient
+High-Definition Hybrid TI2V</h5>
+<p>To enable more efficient deployment, Wan2.2 also explores a
+high-compression design. In addition to the 27B MoE models, a 5B dense
+model, i.e., TI2V-5B, is released. It is supported by a high-compression
+Wan2.2-VAE, which achieves a <span
+class="math inline"><em>T</em> × <em>H</em> × <em>W</em></span>
+compression ratio of <span class="math inline">4 × 16 × 16</span>,
+increasing the overall compression rate to 64 while maintaining
+high-quality video reconstruction. With an additional patchification
+layer, the total compression ratio of TI2V-5B reaches <span
+class="math inline">4 × 32 × 32</span>. Without specific optimization,
+TI2V-5B can generate a 5-second 720P video in under 9 minutes on a
+single consumer-grade GPU, ranking among the fastest 720P@24fps video
+generation models. This model also natively supports both text-to-video
+and image-to-video tasks within a single unified framework, covering
+both academic research and practical applications.</p>
+<div data-align="center">
+<pre><code>&lt;img src=&quot;assets/vae.png&quot; alt=&quot;&quot; style=&quot;width: 80%;&quot; /&gt;</code></pre>
+</div>
+<h5 id="comparisons-to-sotas">Comparisons to SOTAs</h5>
+<p>We compared Wan2.2 with leading closed-source commercial models on
+our new Wan-Bench 2.0, evaluating performance across multiple crucial
+dimensions. The results demonstrate that Wan2.2 achieves superior
+performance compared to these leading models.</p>
+<div data-align="center">
+<pre><code>&lt;img src=&quot;assets/performance.png&quot; alt=&quot;&quot; style=&quot;width: 90%;&quot; /&gt;</code></pre>
+</div>
+<h2 id="citation">Citation</h2>
+<p>If you find our work helpful, please cite us.</p>
+<pre><code>@article{wan2025,
+      title={Wan: Open and Advanced Large-Scale Video Generative Models}, 
+      author={Team Wan and Ang Wang and Baole Ai and Bin Wen and Chaojie Mao and Chen-Wei Xie and Di Chen and Feiwu Yu and Haiming Zhao and Jianxiao Yang and Jianyuan Zeng and Jiayu Wang and Jingfeng Zhang and Jingren Zhou and Jinkai Wang and Jixuan Chen and Kai Zhu and Kang Zhao and Keyu Yan and Lianghua Huang and Mengyang Feng and Ningyi Zhang and Pandeng Li and Pingyu Wu and Ruihang Chu and Ruili Feng and Shiwei Zhang and Siyang Sun and Tao Fang and Tianxing Wang and Tianyi Gui and Tingyu Weng and Tong Shen and Wei Lin and Wei Wang and Wei Wang and Wenmeng Zhou and Wente Wang and Wenting Shen and Wenyuan Yu and Xianzhong Shi and Xiaoming Huang and Xin Xu and Yan Kou and Yangyu Lv and Yifei Li and Yijing Liu and Yiming Wang and Yingya Zhang and Yitong Huang and Yong Li and You Wu and Yu Liu and Yulin Pan and Yun Zheng and Yuntao Hong and Yupeng Shi and Yutong Feng and Zeyinzi Jiang and Zhen Han and Zhi-Fan Wu and Ziyu Liu},
+      journal = {arXiv preprint arXiv:2503.20314},
+      year={2025}
+}</code></pre>
+<h2 id="license-agreement">License Agreement</h2>
+<p>The models in this repository are licensed under the Apache 2.0
+License. We claim no rights over the your generated contents, granting
+you the freedom to use them while ensuring that your usage complies with
+the provisions of this license. You are fully accountable for your use
+of the models, which must not involve sharing any content that violates
+applicable laws, causes harm to individuals or groups, disseminates
+personal information intended for harm, spreads misinformation, or
+targets vulnerable populations. For a complete list of restrictions and
+details regarding your rights, please refer to the full text of the <a
+href="LICENSE.txt">license</a>.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We would like to thank the contributors to the <a
+href="https://huggingface.co/stabilityai/stable-diffusion-3-medium">SD3</a>,
+<a href="https://huggingface.co/Qwen">Qwen</a>, <a
+href="https://huggingface.co/google/umt5-xxl">umt5-xxl</a>, <a
+href="https://github.com/huggingface/diffusers">diffusers</a> and <a
+href="https://huggingface.co">HuggingFace</a> repositories, for their
+open research.</p>
+<h2 id="contact-us">Contact Us</h2>
+<p>If you would like to leave a message to our research or product
+teams, feel free to join our <a
+href="https://discord.gg/AKNgpMK4Yj">Discord</a> or <a
+href="https://gw.alicdn.com/imgextra/i2/O1CN01tqjWFi1ByuyehkTSB_!!6000000000015-0-tps-611-1279.jpg">WeChat
+groups</a>!</p>

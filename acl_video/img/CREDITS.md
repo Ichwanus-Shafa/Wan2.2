@@ -1,0 +1,12 @@
+- knee-intro.jpg: Photo by Surprising_Media on Pixabay (https://pixabay.com/photos/woman-run-jog-exercise-running-9455245/)
+- knee-anatomy.jpg: Knee diagram-ar, Public domain (Wikimedia Commons) https://commons.wikimedia.org/wiki/File:Knee_diagram-ar.jpg
+- athlete-landing.jpg: Photo by TruongDinhAnh on Pixabay (https://pixabay.com/photos/football-soccer-sport-ball-game-9842596/)
+- knee-pain.jpg: Photo by WolfBlur on Pixabay (https://pixabay.com/photos/figure-man-knee-knee-pain-sports-1691868/)
+- doctor-consult.jpg: Photo by voltamax on Pixabay (https://pixabay.com/photos/nurse-medicine-doctor-hospital-2019420/)
+- physio-training.jpg: Photo by lartaldato on Pixabay (https://pixabay.com/photos/electrostimulation-sport-health-1230004/)
+- knee-pain.jpg: Photo by Ben_Kerckx on Pixabay (https://pixabay.com/photos/football-injury-sport-pain-619243/)
+- physio-training.jpg: Photo by stevepb on Pixabay (https://pixabay.com/photos/physiotherapy-weight-training-595529/)
+- athlete-landing.jpg: Photo by LukaszWyrwik on Pixabay (https://pixabay.com/photos/garbarnia-krakow-football-match-6716141/)
+- doctor-consult2.jpg: Photo by fernandozhiminaicela on Pixabay (https://pixabay.com/photos/treatment-hospital-clinic-medicine-4099432/)
+- doctor-knee2.jpg: Photo by kumarsu6745_ on Pixabay (https://pixabay.com/photos/knee-orthopedics-therapy-pain-10309879/)
+- knee-anatomy2.jpg: Photo by Taokinesis on Pixabay (https://pixabay.com/photos/knee-x-ray-medical-anatomy-2253047/)
