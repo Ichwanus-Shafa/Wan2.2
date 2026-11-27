@@ -1,0 +1,2 @@
+- plantar-heal-1.jpg: Photo by one_life on Pixabay (https://pixabay.com/photos/baby-feet-heart-love-mother-1527456/)
+- plantar-heal-2.jpg: Photo by u_3lkoxbah4k on Pixabay (https://pixabay.com/photos/therapy-health-feet-massage-7949513/)

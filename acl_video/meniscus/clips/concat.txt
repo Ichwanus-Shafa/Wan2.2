@@ -1,0 +1,6 @@
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/01_intro.mp4'
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/02_penyebab.mp4'
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/03_gejala.mp4'
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/04_latihan.mp4'
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/05_terapi.mp4'
+file '/vercel/sandbox/repo/acl_video/meniscus/clips/06_cta.mp4'
