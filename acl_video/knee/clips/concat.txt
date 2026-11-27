@@ -1,0 +1,8 @@
+file '/vercel/sandbox/repo/acl_video/knee/clips/01_hook.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/02_aktivitas.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/03_penyebab.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/04_assessment.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/05_terapi.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/06_latihan.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/07_pencegahan.mp4'
+file '/vercel/sandbox/repo/acl_video/knee/clips/08_cta.mp4'
